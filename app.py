@@ -10,6 +10,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/todo")
+def todo():
+    return render_template("to-do-list.html")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
