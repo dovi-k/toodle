@@ -7,7 +7,7 @@ const input = document.getElementById("input");
 // Classes names
 
 const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
+const UNCHECK = "fa-circle";
 const LINE_THROUGH = "lineThrough";
 
 // Show today's date
@@ -21,10 +21,11 @@ dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
 function addToDo(toDo){
     const item = `
-                <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                <i class="fas fa-check-circle co" job="complete" id="0"></i>
                 <p class="text">${toDo}</p>
-                <i class="fa fa-trash-o de" job="delete" id="0"></i>
+                <i class="far fa-trash-alt de" job="delete" id="0"></i>
     `;
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
 }
+
