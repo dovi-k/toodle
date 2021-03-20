@@ -19,11 +19,18 @@ dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
 // add to-do function
 
-function addToDo(toDo){
+
+function addToDo(toDo, id, done, trash){
+
+        if(trash){return; }
+
+        const DONE = done ? CHECK : UNCHECK;
+        const LINE = done ? LINE_THROUGH : "";
+
     const item = `
-                <i class="fas fa-check-circle co" job="complete" id="0"></i>
-                <p class="text">${toDo}</p>
-                <i class="far fa-trash-alt de" job="delete" id="0"></i>
+                <i class="fas ${DONE} co" job="complete" id="${id}"></i>
+                <p class="text ${LINE}">${toDo}</p>
+                <i class="far fa-trash-alt de" job="delete" id="${id}"></i>
     `;
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
@@ -31,7 +38,7 @@ function addToDo(toDo){
 
 // add an item to the list using the enter key
 
-document.addEventListener("keyup", function(event){
+document.addEventListener("keyup", function(even){
     if(event.keyCode == 13){
         const toDo = input.value;
         // if the input isn't empty
@@ -40,3 +47,4 @@ document.addEventListener("keyup", function(event){
         }
     }
 });
+
