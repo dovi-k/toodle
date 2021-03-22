@@ -10,11 +10,9 @@
   <!-- Custom fonts for this template -->
   <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"> 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/landing-page.min.css') }}">
-
     <title>Document</title>
 
 </head>
@@ -26,7 +24,7 @@
       <a class="navbar-brand" href="{{  url_for('index') }}">TO-DO</a>
       <a class="btn btn-primary" href="{{  url_for('todo') }}">To do list</a>
       <a class="btn btn-primary" href="{{  url_for('profile') }}">profile</a>
-      <a class="btn btn-primary" href="#">Sign In</a>
+      <a class="btn btn-primary" href="{{ url_for('signup') }}">Sign In</a>
     </div>
   </nav>
 
@@ -45,7 +43,8 @@
                 <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                  <a href="{{ url_for('signup') }}"></a>
+                <button type="submit" href="{{ url_for('signup') }}" class="btn btn-block btn-lg btn-primary">Sign up!</button>
               </div>
             </div>
           </form>
