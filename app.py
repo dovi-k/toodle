@@ -21,13 +21,15 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/index")
 def index():
     return render_template("index.html")
 
 
 @app.route("/todo")
 def todo():
-    return render_template("to-do-list.html")
+    lists = list(mongo.db.lists.find())
+    return render_template("to-do-list.html", lists=lists)
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -67,8 +69,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")

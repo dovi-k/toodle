@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"> 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/landing-page.min.css') }}">
-    <title>Document</title>
+    <title>MyToDo</title>
 
 </head>
 <body>
@@ -22,9 +22,9 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="{{  url_for('index') }}">TO-DO</a>
-      <a class="btn btn-primary" href="{{  url_for('todo') }}">To do list</a>
-      <a class="btn btn-primary" href="{{  url_for('profile') }}">profile</a>
-      <a class="btn btn-primary" href="{{ url_for('signup') }}">Sign In</a>
+      <a class="btn btn-primary btn-color" href="{{  url_for('todo') }}">To do list</a>
+      <a class="btn btn-primary btn-color" href="{{  url_for('profile', username=session['user']) }}">profile</a>
+      <a class="btn btn-primary btn-color" href="{{ url_for('signup') }}">Sign In</a>
     </div>
   </nav>
 
@@ -44,7 +44,7 @@
               </div>
               <div class="col-12 col-md-3">
                   <a href="{{ url_for('signup') }}"></a>
-                <button type="submit" href="{{ url_for('signup') }}" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                <button type="submit" href="{{ url_for('signup') }}" class="btn btn-block btn-lg btn-primary btn-color">Sign up!</button>
               </div>
             </div>
           </form>
@@ -60,7 +60,7 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="fas fa-tasks m-auto text-primary"></i>
+              <i class="fas fa-tasks m-auto text-primary icon-color"></i>
             </div>
             <h3>Organization</h3>
             <p class="lead mb-0">Organizing your tasks to make them more managable.</p>
@@ -69,7 +69,7 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="fas fa-briefcase m-auto text-primary"></i>
+              <i class="fas fa-briefcase m-auto text-primary icon-color"></i>
             </div>
             <h3>Productivity</h3>
             <p class="lead mb-0">Prioritize the most important tasks.</p>
@@ -78,7 +78,7 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="fas fa-check-circle m-auto text-primary"></i>
+              <i class="fas fa-check-circle m-auto text-primary icon-color"></i>
             </div>
             <h3>Motivation</h3>
             <p class="lead mb-0">Use it as a way to clarify goals.</p>
