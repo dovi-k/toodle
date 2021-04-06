@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
-    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/to-do-list.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/to-do-list.css') }}">
     <!-- Compiled and minified CSS from Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
@@ -16,7 +16,7 @@
 
 </head>
 <body>
-
+<h3 class="center teal lighten-4">My To Do Lists </h3>
   <div class="row">
     <div class="col s12 m6">
       <div class="card z-depth-3">
@@ -35,10 +35,8 @@
                 <i class="far fa-trash-alt" job="delete" id="0"></i>
                 {% endfor %}
             </li>
-                <div class="add-to-do">
         <i class="fa fa-plus-circle"></i>
         <input type="text" id="input" placeholder="Add to-do">
-    </div>
 
         </ul>
         </div>

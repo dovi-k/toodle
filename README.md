@@ -1,45 +1,172 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# **MyToDo**
 
-Welcome dovi-k,
+![Mock up](wireframes/#)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
 
-## Gitpod Reminders
+## **Goal for this project**
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+In the fast pace world it's really easy to get overwhelemed with the number of thing we need to do. 
+This project is an attempt to make organising and going though your to do list easier.
 
-A blue button should appear to click: *Make Public*,
+Making to do list is proven to 
+ 
 
-Another blue button should appear to click: *Open Browser*.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+--- 
 
-A blue button should appear to click: *Make Public*,
+<a></a>
 
-Another blue button should appear to click: *Open Browser*.
+## Table of contents 
+* [UX](#ux)
+    * [User Goals](#user-goals)
+    * [User Stories](#user-stories)
+    * [Site Owners Goals](#site-owners-goals)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
+        * [Requirements](#requirements)
+        * [Expectations](#expectations)
+    * [Design Choices](#design-choices)
+        * [Fonts](#fonts)
+        * [Colors](#colors)
+        * [Structure](#structure)
+* [Wireframes and Flowcharts](#wireframes-and-flowcharts)
+    * [Wireframes](#wireframes)
+    * [Flowcharts](#flowcharts)
+    * [Database Structure](#database-structure)
+* [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features to be implemented](#features-to-be-implemented)
+* [Technologies used](#technologies-used)
+    * [Languages](#languages)
+    * [Libraries and Frameworks](#libraries-and-frameworks)
+    * [Tools](#tools)
+* [Testing](#testing)
+* [Deployment](#deployment)
+    * [Local Deployment](#local-deployment)
+    * [Heroku Deployment](#heroku-deployment)
+* [Credits](#credits)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+--- 
 
-## Updates Since The Instructional Video
+<a name="ux"></a>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## **UX**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+<a></a>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### **User Goals**
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* The website has to work well on all kind of devices like mobile phones, tables and desktops.
+* I want to have a clear dashboard where I can see all the different logs I have created. 
+* The log should appear with the most recent one on top to be relevant. 
+* I want to have a profile for my dog where I can enter information like the name, breed etc. 
+* I would like to have the option to add multiple dogs
+* The website has to be easy to use and easy to update information
+* Visually appealing website
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+[Back to Top](#table-of-contents)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<a></a>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### **User Stories**
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* As a user, I would like to be able to register for the website so I can have my personal environment.
+* As a user, I want to be able to easily organise activities I need to do in a list
+* As a user, I want to login after I created an account and see my previous inserted information.
+* As a user, I would like to have a personal profile 
+* As a user, I want to be able to make a multiple lists 
+* As a user, I want to be able to edit my list
+* As a user, I want to have the possibilty to delete a log as well when no longer relevant. 
+* As a user, I want the website to be easy to use. 
 
---------
 
-Happy coding!
+<a></a>
+
+### **Site owners Goals**
+* To have an appealing website that users can organise their day to day activities
+* To have a great user friendly design and functionality  
+
+
+[Back to Top](#table-of-contents)
+
+<a></a>
+
+### **User Requirements and Expectations**
+
+<a></a>
+
+#### Requirements
+
+* Easy to navigate by using the few buttons
+* Easy way to add items to to do lists
+* Easy way to add new to do list
+* Ability to edit and delete existing list items/lists
+
+<a></a>
+
+#### Expectations
+
+* Ability organise my to do list
+* To have a dashboard where all the necessary information is visible
+* Easy to add my tasks to my list
+* Personalised profile 
+* My information is saved when I can add it
+
+[Back to Top](#table-of-contents)
+
+<a></a>
+
+### **Design Choices**
+
+I wanted to use landing page to introduce the user to the benifits of using to do list and organising your activities.
+To get the efect I wanted I decided to use Start Bootstrap template, the image of the post it notes scaterred on the wall 
+with the tasks illustrating the start of organising the chaos of the to do list and I belive carries out the task perfecly.
+The landing page is informative and it calls for action to Sign Up for the page or Log In with existing details.
+
+The Colors I have used are 
+
+I wanted to keep the color palet simple and clean. 
+
+I have used [Coolors](https://coolors.co/ "Coolors.co") to come up with a color scheme that matches the atmosphere of a Health Tracker.
+For this website I have deciced to keep design simple, meaning I opted for a white background color with some light gray for the profile and logs.
+I have added some color (blue) for the buttons, navigation bar and footer to make the design more visually appealing to the user. 
+The reason for this is that for this project, the functionality is much more important and as there are a lot of functionalities I don't want to distract the user with overwhelming colors. 
+
+<a></a>
+
+#### Colors
+
+Like I mentioned before, I have decided to use some colors that fit well with the feeling of a Health Tracker.
+Below I will explain more why I choose the various colors and for what I will be using them.
+
+![Color Palette](wireframes/color-palette.png)
+
+* #ffffff: I have decided to keep the background of the overall website white in order give the clean look. I will also use this color as text color for the nav bar and buttons.
+* #D9D9D9: This color I will use as a background color for whole dashboard. 
+* #F5F5F5: This color I will use as a background color for the logs on the dashboard in order to have a small contract versus #D9D9D9 dashboard color.
+* #284B63: This will be the color that I will use for my navigation bar and buttons in order to give a bit of color to the website. This color will also be used as the overall text color.
+
+I have used a contrast checker in order to make sure that the contrast is sufficient.
+This way my content will be easily readable. 
+
+<a></a>
+
+#### Fonts
+In order to find appropriate fonts for my website, I have visited [Google Fonts](https://fonts.google.com/ "Google Fonts") to explore the various options.
+For the titles and subtitles, I have used the font [Play](https://fonts.google.com/specimen/Play "Play") 
+and for the main text I have used [Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond "Cormorant Garamond"). 
+
+<a></a>
+
+#### Structure
+
+I have chosen to use [Materialize](https://materializecss.com/) to create an overall structure for my website. 
+Materialize provides various elements of CSS and Javascript which is very helpful to keep a good structure on your page. 
+The reason why I choose Materiaize is mainly due to the various features they offer like a datepicker, floating action button etc. 
+
+[Back to Top](#table-of-contents)
+
+--- 
+<a></a>
+
+## **Wireframes and Flowcharts**
