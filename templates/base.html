@@ -20,7 +20,7 @@
         <!--Top navbar-->
         <nav class="teal darken-2 text-shadow">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">To Do</a>
+                <a href="{{ url_for('index') }}" img="{{ url_for('static', filename='img/logo.png') }}" class="brand-logo"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
