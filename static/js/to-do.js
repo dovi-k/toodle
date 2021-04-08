@@ -1,50 +1,42 @@
-// Selecting Elements
-const clear = document.querySelector(".clear");
-const dateElement = document.getElementById("date");
-const list = document.getElementById("list");
-const input = document.getElementById("input");
+// Add to do list items
 
-// Classes names
+const submitForm = document.querySelector('.add');
+const addButton = document.querySelector('.add-todo');
+const todoList = document.querySelector('.todos');
+const list = document.querySelectorAll('.todos li'); 
 
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle";
-const LINE_THROUGH = "lineThrough";
+let listLenght = list.lenght;
 
-// Show today's date
+const generateTempalate = (todo) => {
+  
+  const html = `<li>
+                  <input type="checkbox" id="todo_${listLenght}">
+                  <label for="todo_${listLenght}">
+                    <span class="check"></span>
+                    ${todo}
+                  </label>
+                  <i class="far fa-trash-alt delete"></i>
+                </li>`
+  todoList.innerHTML += html;
+};
 
-const options = {weekday: "long", month: "short", day: "numeric"};
-const today = new Date();
-
-dateElement.innerHTML = today.toLocaleDateString("en-US", options);
-
-// add to-do function
-
-
-function addToDo(toDo, id, done, trash){
-
-        if(trash){return; }
-
-        const DONE = done ? CHECK : UNCHECK;
-        const LINE = done ? LINE_THROUGH : "";
-
-    const item = `
-                <i class="fas ${DONE} co" job="complete" id="${id}"></i>
-                <p class="text ${LINE}">${toDo}</p>
-                <i class="far fa-trash-alt de" job="delete" id="${id}"></i>
-    `;
-    const position = "beforeend";
-    list.insertAdjacentHTML(position, item);
+function addTodos(e) {
+  e.preventDefault();
+  const todo = submitForm.add.value.trim();
+  if (todo.length) {
+    listLenght = listLenght + 1;
+    generateTempalate(todo);
+    submitForm.reset();
+  }
 }
 
-// add an item to the list using the enter key
+submitForm.addEventListener('submit', addTodos);
+addButton.addEventListener('click', addTodos);
 
-document.addEventListener("keyup", function(even){
-    if(event.keyCode == 13){
-        const toDo = input.value;
-        // if the input isn't empty
-        if(toDo){
-            addToDo(toDo);
-        }
-    }
-});
+function deleteTodos(e) {
+  if (e.target.classList.contains('delete')) {
+    e.target.parentElement.remove();
+  }
+}
 
+todoList.addEventListener('click', deleteTodos);

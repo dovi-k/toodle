@@ -1,157 +1,169 @@
-body{
-    padding: 0;
-    margin: 0;
-    background-color: rgba(0,0,0,0.1);
-    font-family: 'Titillium Web', sans-serif;
-}
 
-/* ------------ container ------------ */
-.container{
-    padding:10px;
-    width:380px;
-    margin:0 auto;
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
-
-/* ------------ header ------------ */
-.header{
-    width: 380px;
-    height:200px;
-    background-image: url('../img/colorsky1.jpg');
-    background-size: 100% 200%;
-    background-repeat: no-repeat;
-    border-radius: 15px 15px 0 0;
-    position: relative;
+.todoList {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
 }
-.clear{
-    width : 30px;
-    height: 30px;
-    position: absolute;
-    right:20px;
-    top: 20px;
+.cover-img .cover-inner {
+  background: url('https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/1486/cached.offlinehbpl.hbpl.co.uk/news/OMC/WFH-2019092007545320.jpg');
+  height: 190px;
+  background-size: cover;
+  background-position: 10% 20%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
 }
-.clear i{
-    font-size: 30px;
-    color: #FFF;
+.cover-img .cover-inner::after {
+  background: rgba(0, 0, 0, .3);
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
-.clear i:hover{
-    cursor: pointer;
-    text-shadow: 1px 3px 5px #000;
-    transform: rotate(45deg);
+.cover-img h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Nunito', sans-serif;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  z-index: 10;
+  font-weight: 700;
 }
-#date{
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: #FFF;
-    font-size: 25px;
-    font-family: 'Titillium Web', sans-serif;
+.content {
+  padding: 10px 20px;
 }
-
-/* ------------ content ------------ */
-.content{
-    width:380px;
-    height: 350px;
-    max-height:350px;
-    background-color: #FFF;
-    overflow: auto;
+.content form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 0 10px 0 5px;
+  border-bottom: 1px solid #8e979c;
 }
-.content::-webkit-scrollbar { 
-    display: none; 
+.content form > * {
+  background: transparent;
+  border: none;
+  height: 35px;
 }
-.content ul{
-    padding:0;
-    margin:0;
+.content input[type='text'] {
+  padding: 0 5px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #6c717b;
+  outline: none;
 }
-.item{
-    width:380px;
-    height: 45px;
-    min-height: 45px;
-    position: relative;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.content .input-buttons a{
+  text-decoration: none;
 }
-.item i.co{
-    position: absolute;
-    font-size: 25px;
-    padding-left:5px;
-    left:15px;
-    top:10px;
+.content .input-buttons i {
+  margin-top: 5px;
+  font-size: 20px;
+  color: #8e979c;
 }
-.item i.co:hover{
-    cursor: pointer;
+.content ul.todos {
+  margin-left: 0;
+  padding: 0;
+  letter-spacing: none;
+  height: 220px;
+  overflow: auto;
 }
-.fa-check-circle{
-    color:#6eb200;
+.content li {
+  user-select: none;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
-.item p.text{
-    position: absolute;
-    padding:0;
-    margin:0;
-    font-size: 20px;
-    left:50px;
-    top:5px;
-    background-color: #FFF;
-    max-width:285px;
+.content li i {
+  color: #6c717b;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px 10px;
 }
-.lineThrough{
-    text-decoration: line-through;
-    color : #ccc;
+.content input[type="checkbox"] {
+  display: none;
 }
-.item i.de{
-    position: absolute;
-    font-size: 25px;
-    right:15px;
-    top:10px;
+.content input[type="checkbox"] + label {
+  color: #6c717b;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 5px 5px 5px 30px;
 }
-.item i.de:hover{
-    color:#af0000;
-    cursor: pointer;
+.content input[type="checkbox"] + label:hover {
+  color: #353a42;
+  background-color: #f4f7fa;
 }
-/* ------------ add item ------------ */
-.add-to-do{
-    position: relative;
-    width: 360px;
-    height:40px;
-    background-color: #FFF;
-    padding: 10px;
-    border-top: 1px solid rgba(0,0,0,0.1);
+.content input[type="checkbox"] + label span.check {
+  left: 4px;
+  top: 50%;
+  position: absolute;
+  transform: translatey(-50%);
+  width: 18px;
+  height: 18px;
+  display: block;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #b8bfcc;
+  box-shadow: 0 2px 3px #f0f4f8;
 }
-.add-to-do i{
-    position: absolute;
-    font-size: 40px;
-    color: #4162f6;
+.content input[type="checkbox"]:checked + label {
+  color: #aeb7c6;
+  text-decoration: line-through;
 }
-
-.add-to-do input{
-    position: absolute;
-    left: 50px;
-    height: 35px;
-    width: 310px;
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    padding-left:10px;
+.content input[type="checkbox"]:checked + label span.check {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }
-.add-to-do input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
+.content input[type="checkbox"] + label span.check::after {
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  background-image: url('https://tjgillweb.github.io/Vacation-Todo-App/images/tick.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  transform: scale(0);
+  transition: transform 300ms cubic-bezier(.3, 0, 0, 1.5);
 }
-.add-to-do input::-moz-placeholder { /* Firefox 19+ */
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
+.content input[type="checkbox"]:checked + label span.check::after {
+  transform: scale(1);
 }
-.add-to-do input:-ms-input-placeholder { /* IE 10+ */
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
+.content input[type="checkbox"] + label span.check::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: #8798aa;
+  opacity: .8;
+  transform: scale(0);
 }
-.add-to-do input:-moz-placeholder { /* Firefox 18- */
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
+.content input[type="checkbox"]:checked + label span.check::before {
+  opacity: 0;
+  transform: scale(1.3);
+  transition: opacity 300ms cubic-bezier(0.2, 0, 0, 1), transform 400ms cubic-bezier(0.3, 0, 0, 1.4);
 }
-

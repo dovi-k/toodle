@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/to-do-list.css') }}">
+    <!-- Compiled and minified CSS from Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    
+    <title>To Do Lists</title>
+
+</head>
+<body>
+<h3 class="center teal lighten-4">My To Do Lists </h3>
+  <div class="row">
+    <div class="col s12 m8">
+      <div class="card z-depth-3 center">
+        <div class="card-image">
+          <img class="responsive-img" src="{{ url_for('static', filename='img/colorsky1.jpg')}}">
+          <div id="date"></div>
+          {% for list in lists %}
+          <span class="card-title"><strong>{{ list.list_name }}</strong></span>
+        </div>
+        <div class="card-content">
+                 <ul id="list">
+            <li class="item">
+                
+                <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                <p class="text">{{ list.list_item }}</p>
+                <i class="far fa-trash-alt" job="delete" id="0"></i>
+                {% endfor %}
+            </li>
+            <form>
+        <i class="fas fa-plus-circle"></i>
+        <input type="text" id="input" placeholder="Add to-do">
+        </form>
+
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% for list in lists %}
+
+{% endfor %}
+
+<script src="{{ url_for('static', filename='js/to-do.js') }}"></script>
+    
+</body>
+</html>
+
+{% endblock %}

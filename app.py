@@ -32,6 +32,11 @@ def todo():
     return render_template("to-do-list.html", lists=lists)
 
 
+@app.route("/add_todo")
+def add_todo():
+    return render_template("add_todo.html")
+
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
