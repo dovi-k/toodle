@@ -12,6 +12,13 @@
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Document</title>
+    <style>
+    .logo { position: relative;
+            width: 100px;
+            left: 64px;
+            top: -15px;
+            background-size: contain;}
+    </style>
 </head>
 
 <body>
@@ -20,8 +27,9 @@
         <!--Top navbar-->
         <nav class="teal darken-2 text-shadow">
             <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" img="{{ url_for('static', filename='img/logo.png') }}" class="brand-logo"></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <a href="{{ url_for('index') }}" class="brand-logo"> 
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="my-to-do website logo" class="logo"></a>
+                <a href="{{ url_for('index') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
                     <li><a href="#">My Lists</a></li>
