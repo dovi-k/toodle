@@ -203,7 +203,7 @@ I have used [Draw.io](https://draw.io/) to make this flowchart which you can vie
 
 ### **Database Structure**
 
-I have used MongoDB to set up the database for this project with the following collections: 
+MongoDB was used to set up the database for this project with the following collections: 
 
 #### **Users:**
 
@@ -213,46 +213,24 @@ _id      | ObjectId
 username | String
 password | String
 
-#### **Dogs:**
+#### **List Names:**
 
 Key             | Value
 ----------------|-----------
 _id             | ObjectId
 user_id         | String
-dog_name        | String
-dog_breed       | String
-date_of_birth   | String
-dog_description | String
-dog_image       | String
+list_name       | String
 
-#### **Logs:**
+#### **List Items:**
 
 Key             | Value
 ----------------|-----------
 _id             | ObjectId
-dog_id          | String
 user_id         | String
-log_date        | String
+list_id         | String
+list_item       | String
 dog_weight      | String
 weight_metric   | String
-dog_activity    | String
-dog_food        | String
-food_metric     | String
-other_notes     | String
-
-#### **Food_metrics** ####
-
-Key             | Value
-----------------|-----------
-_id             | ObjectId
-metric_name     | String
-
-#### **Weight_metrics** ####
-
-Key             | Value
-----------------|-----------
-_id             | ObjectId
-metric_name     | String
 
 
 [Back to Top](#table-of-contents)

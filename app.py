@@ -99,6 +99,12 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/all_lists")
+def all_lists():
+    lists = list(mongo.db.lists.find())
+    return render_template("all_lists.html", lists=lists)
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookie
