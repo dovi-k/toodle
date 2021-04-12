@@ -9,7 +9,9 @@
 In the fast pace world it's really easy to get overwhelemed with the number of thing we need to do. 
 This project is an attempt to make organising and going though your to do list easier.
 
-Making to do list is proven to 
+Whether you want to break your big overwhelming tasks into smaller more managible tasks or organise
+you College, Home, Personal activities and have your tasks in organised different lists categories that you set
+Toodle you personal to do list organiser is here at your service.
  
 
 
@@ -31,7 +33,6 @@ Making to do list is proven to
         * [Structure](#structure)
 * [Wireframes and Flowcharts](#wireframes-and-flowcharts)
     * [Wireframes](#wireframes)
-    * [Flowcharts](#flowcharts)
     * [Database Structure](#database-structure)
 * [Features](#features)
     * [Existing Features](#existing-features)
@@ -44,6 +45,7 @@ Making to do list is proven to
 * [Deployment](#deployment)
     * [Local Deployment](#local-deployment)
     * [Heroku Deployment](#heroku-deployment)
+* [Code Sources Used/References](#code-sources)
 * [Credits](#credits)
 
 --- 
@@ -57,11 +59,9 @@ Making to do list is proven to
 ### **User Goals**
 
 * The website has to work well on all kind of devices like mobile phones, tables and desktops.
-* I want to have a clear dashboard where I can see all the different logs I have created. 
-* The log should appear with the most recent one on top to be relevant. 
-* I want to have a profile for my dog where I can enter information like the name, breed etc. 
-* I would like to have the option to add multiple dogs
-* The website has to be easy to use and easy to update information
+* I want to have a clear dashboard where I can see all my list categories displaid and with the tasks assigned to them
+* I want to have an option to create my personalised list categories
+* I would like to easily add and remove to do list items from the list
 * Visually appealing website
 
 [Back to Top](#table-of-contents)
@@ -76,7 +76,7 @@ Making to do list is proven to
 * As a user, I would like to have a personal profile 
 * As a user, I want to be able to make a multiple lists 
 * As a user, I want to be able to edit my list
-* As a user, I want to have the possibilty to delete a log as well when no longer relevant. 
+* As a user, I want to have the possibilty to delete a list when is no longer relevant
 * As a user, I want the website to be easy to use. 
 
 
@@ -98,8 +98,8 @@ Making to do list is proven to
 #### Requirements
 
 * Easy to navigate by using the few buttons
-* Easy way to add items to to do lists
-* Easy way to add new to do list
+* Easy way to add/remove items to to do lists
+* Easy way to add new to do list category
 * Ability to edit and delete existing list items/lists
 
 <a></a>
@@ -107,7 +107,6 @@ Making to do list is proven to
 #### Expectations
 
 * Ability organise my to do list
-* To have a dashboard where all the necessary information is visible
 * Easy to add my tasks to my list
 * Personalised profile 
 * My information is saved when I can add it
@@ -120,86 +119,59 @@ Making to do list is proven to
 
 I wanted to use landing page to introduce the user to the benifits of using to do list and organising your activities.
 To get the efect I wanted I decided to use Start Bootstrap template, the image of the post it notes scaterred on the wall 
-with the tasks illustrating the start of organising the chaos of the to do list and I belive carries out the task perfecly.
-The landing page is informative and it calls for action to Sign Up for the page or Log In with existing details.
+with the tasks illustrating the start of organising the chaos of the to do list and I believe carries out the task perfecly.
+The landing page is informative listing benifits of having a to do list and it calls for action to Sign Up for the page or Log In with existing details.
 
-The Colors I have used are 
-
-I wanted to keep the color palet simple and clean. 
-
-I have used [Coolors](https://coolors.co/ "Coolors.co") to come up with a color scheme that matches the atmosphere of a Health Tracker.
-For this website I have deciced to keep design simple, meaning I opted for a white background color with some light gray for the profile and logs.
-I have added some color (blue) for the buttons, navigation bar and footer to make the design more visually appealing to the user. 
-The reason for this is that for this project, the functionality is much more important and as there are a lot of functionalities I don't want to distract the user with overwhelming colors. 
+My goal was to keep the color palet simple and clean. 
 
 <a></a>
 
 #### Colors
 
-Like I mentioned before, I have decided to use some colors that fit well with the feeling of a Health Tracker.
-Below I will explain more why I choose the various colors and for what I will be using them.
 
-![Color Palette](wireframes/color-palette.png)
 
-* #ffffff: I have decided to keep the background of the overall website white in order give the clean look. I will also use this color as text color for the nav bar and buttons.
-* #D9D9D9: This color I will use as a background color for whole dashboard. 
-* #F5F5F5: This color I will use as a background color for the logs on the dashboard in order to have a small contract versus #D9D9D9 dashboard color.
-* #284B63: This will be the color that I will use for my navigation bar and buttons in order to give a bit of color to the website. This color will also be used as the overall text color.
+* #ffffff: I have decided to keep the background of the overall website white in order give the clean look. This color is used for text color for the nav bar and buttons.
+* #2a9d8f: Navigation bar and buttons
 
-I have used a contrast checker in order to make sure that the contrast is sufficient.
-This way my content will be easily readable. 
+
 
 <a></a>
 
 #### Fonts
-In order to find appropriate fonts for my website, I have visited [Google Fonts](https://fonts.google.com/ "Google Fonts") to explore the various options.
-For the titles and subtitles, I have used the font [Play](https://fonts.google.com/specimen/Play "Play") 
-and for the main text I have used [Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond "Cormorant Garamond"). 
+I used  [Google Fonts](https://fonts.google.com/ "Google Fonts") to find the fonts to use.
+
 
 <a></a>
 
 #### Structure
 
-I have chosen to use [Materialize](https://materializecss.com/) to create an overall structure for my website. 
-Materialize provides various elements of CSS and Javascript which is very helpful to keep a good structure on your page. 
-The reason why I choose Materiaize is mainly due to the various features they offer like a datepicker, floating action button etc. 
+As I mention before I took the landing page template from [StartBootrap](www.startbootstrap.com). It created lovely welcome page
+with useful information, points and benifits of to do lists. Then the rest of the website I chose to use [Materialize](https://materializecss.com/), because
+ I really enjoyed the different components and the depth different materials create for the website.
 
 [Back to Top](#table-of-contents)
 
 --- 
 <a></a>
 
-## **Wireframes and Flowcharts**
+## **Wireframes**
 
 ### **Wireframes**
-I used [Balsamic](https://balsamiq.com/wireframes/) to create wireframes for my website. 
+ [Balsamic](https://balsamiq.com/wireframes/) programme was used to create wireframes for my website: 
 
-You can find my wireframes below:
-
-For the homepage I have only created 1 wireframe as the design is quite basic and looks identical on all screen sizes.
-* [Home](wireframes/desktop-home.png)
 
 #### Desktop Wireframes
 * [Dashboard](wireframes/desktop-dashboard.png)
-* [Add Dog](wireframes/desktop-adddog.png)
-* [Add Log](wireframes/desktop-addlog.png)
+
 
 #### Tablet Wireframes
 * [Dashboard](wireframes/tablet-dashboard.png)
-* [Add Dog](wireframes/tablet-adddog.png)
-* [Add Log](wireframes/tablet-addlog.png)
+
 
 #### Mobile Wireframes
 * [Dashboard](wireframes/mobile-dashboard.png)
-* [Add Dog](wireframes/mobile-adddog.png)
-* [Add Log](wireframes/mobile-addlog.png)
 
-### **Flowcharts**
 
-I have decided to make a flowchart for the sign-in / register proccess to completely understand each step of the process.  
-I have used [Draw.io](https://draw.io/) to make this flowchart which you can view below: 
-
-[Flowchart](wireframes/flowchart.png)
 
 ### **Database Structure**
 
@@ -229,8 +201,7 @@ _id             | ObjectId
 user_id         | String
 list_id         | String
 list_item       | String
-dog_weight      | String
-weight_metric   | String
+
 
 
 [Back to Top](#table-of-contents)
@@ -249,29 +220,20 @@ weight_metric   | String
 * Sign-In and Out functionality
 * Add multiple dogs per user 
 * CRUD Functions:
-    * Create: possibility to add various dogs and logs
-    * Read: dashboard where you can view the dog profile(which was selected) and its logs
-    * Update: possibility to update the dog profile and logs
-    * Delete: possibility to delete the dog profiles and logs
-* Search logs by log date
+    * Create: new personalised list categories 
+    * Read: list disppay where you can view all the created lists categories and tasks added to them 
+    * Update: possibility to update categories
+    * Delete: possibility to delete tasks from the lists, delete categories
 
 <a></a>
 
 ### **Features to be implemented**
 
-* Currently the user can only insert image url. In the future I would like that the user can upload an image from its computer and/or cloud accounts.
-* Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc.
-* Have a 'forget password' functionality.
-* Include a confirm password to make sure the user has chosen the password he/she wanted. 
-* Possibility for the user to be able to add (and remove) categories they would like to specificely track for their dog like medication etc. 
-* The possibility to filter the logs based on range of data or by month.
-* Expand search function so user can filter on more keywords except for log_date.
-* Submit search form as soon as the user selected a date to prevent confusion for the user. (Did I already click search or not)
-* Add pagination so the list of logs will be display with a max of 20 logs per page.
-* When the user has added their first log, I would like to remember the chosen metrics for any futher logs so they don't have to update this every time they add a log.
-    This would be done through profile preferences or store the data in a cookie. 
-* Give the user the possibility to add a 'Picture of the day' to the log and display it on the dashboard.
-* Add a graph overview page, especially for the tracking of the weight with nice visual aspect.
+* I would like to add functionality that helps sort out the tasks by date
+* I would like to have a seperate tab just for todays tasks
+* I would lke to add differnrt fileters to allow the user customise their own list in the way they prefer, whether it by the date
+or category 
+* I would like to add Search Functionality 
 
 [Back to Top](#table-of-contents)
 
@@ -333,29 +295,22 @@ Link to the repository:
     https://github.com/dovi-k/toodle
     ``` 
 
-1. Access the folder in your terminal window and install the application's [required modules](https://github.com/dovi-k/toodle/blob/master/requirements.txt) using the following command:
+2. Access the folder in your terminal window and install the application's [required modules](https://github.com/dovi-k/toodle/blob/master/requirements.txt) using the following command:
 
     ```
     pip3 install -r requirements.txt
     ```
 
-1. Sign-in or sign-up to [MongoDB](https://www.mongodb.com/) and create a new cluster
-    * Within the Sandbox, click the collections button and after click Create Database (Add My Own Data) called dog_health_tracker
-    * Set up the following collections: users, dogs, logs, food_metrics and weight [Click here to see the exact Database Structure](#database-structure)
-    * Under ***food_metrics*** and ***weight_metrics***, add your preferred metrics in the collection with the following structure: 
-        ```
-        Key             | Value
-        ----------------|-----------
-        _id             | ObjectId          This will be automatically generated by MongoDB
-        metric_name     | String            Replace string by kg, pounds, grams, ounces etc.
-        ```
+3. Sign-in or sign-up to [MongoDB](https://www.mongodb.com/) and create a new cluster
+    * In the Sandbox, click the collections button and after click Create Database 
+    * Set up the following collections: users, lists, lists_category
 
     * Under the Security Menu on the left, select Database Access.
     * Add a new database user, and keep the credentials secure
     * Within the Network Access option, add IP Address 0.0.0.0
 
-1. In your IDE, create a file containing your environmental variables called env.py at the root level of the application. 
-    It will need to contain the following lines and variables:
+4. In your IDE, create an env.py file containing your environmental variables at the root level of the application. 
+    Containing the following lines and variables:
     ```
     import os
 
@@ -366,23 +321,17 @@ Link to the repository:
     os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
     os.environ["MONGO_DBNAME"]= "DATABASE_NAME" 
     ```
+.
+    Make sure env.py file is added to .gitignore file before pushing to your GitHub repository.
 
-    Please note that you will need to update the **SECRET_KEY** with your own secret key, as well as the **MONGO_URI** and **MONGO_DBNAME** variables with those provided by MongoDB.
-    Tip for your SECRET_KEY, you can use a [Password Generator](https://passwordsgenerator.net/) in order to have a secure secret key. 
-    I personlly recommend a length of 24 characters and exclude Symbols.
-    To find your MONGO_URI, go to your clusters and click on connect. Choose connect your application and copy the link provided. 
-    Don't forget to update the necessary fields like password and database name. 
-
-    If you plan on pushing this application to a public repository, ensure that env.py is added to your .gitignore file.
-
-1. The application can now be run locally. In your terminal, type the following command 
+5. The application can now be run locally. In your terminal, type the following command 
     ```
     python3 app.py. 
     ```
     
 ### Steps to Deploy your project to Heroku: 
 
-1. Sign up for Heroku accoun or Login to your existing account. 
+1. Sign up for Heroku account or Login to your existing account. 
 On your dashboard top right corner press New->Create a new app. Choose region closest to you and name the app.
 2. Create the Procfile and requirements.txt files. Make sure requirements.txt is up-to-date in your local repository.  
     Requirements:
@@ -429,11 +378,33 @@ Heroku will start building the app. When the build is complete you can click "vi
 
 <a></a>
 
+## **Code Sources/References**
+
+I used a lot of code from different sources to support my project. I used a lot of Code from Course Miniproject to the point
+where one week before the submission I was advised that it may be too similar to the Miniproject. My project theme it being a to do list
+was not helping as well, miniproject was as well using the Materialise library.
+So I continued on working on my To Do list app "Toodle" in hopes to hopefully upgrade it but I end up running out of time 
+and didn't managed to implement a lot of upgrades I wished I could.
+
+## Code References
+* to create a functioning to do list I refenced and used code from these Youtube Tutorials
+[Code Explained To Do List App in JS](https://www.youtube.com/watch?v=b8sUhU_eq3g&t=5s) and most of the code from 
+[SabCode To Do List](https://www.youtube.com/watch?v=GQTtbVuy1UY&t=37s) for the To Do lists to be displayed
+* Landing page from [StartBootsrap Landing-page theme](https://startbootstrap.com/theme/landing-page), I used different images,
+customised colours, icons and text
+* Most of the styling comes from [Materialize](https://materializecss.com/), teal colour, shadow, nav bar, input fields
+* When creating Functions and interactions with Mongo DB I was referencing a lot Code Institute Task Manager Miniproject
+followed the sign up, sign up functions and made them work for my page
+* ReadMe file Stucture was based from Anouk Smet project [Dogs Health Tracker](https://github.com/AnoukSmet/Dog-Health-Tracker/blob/master/README.md#testing)
+* Images for the website taken from [Pexels](https://www.pexels.com/search/to%20do%20list/)
+
+
 ## **Credits**
 
 * I would like to thank my mentor Simen [Eventyret_mentor](https://github.com/Eventyret) for his patiance and support though a ver!
 * I want to thank my workmate and fellow student [Irina](https://github.com/irinatu17) for inspiration and suppport
 * I want to thank the [Stackoverflow](https://stackoverflow.com/) community as well as [Code Institute](codeinstitute.ie) Slack community
+* I would like to thank Code Institute Student care for support.
 
 [Back to Top](#table-of-contents)
 

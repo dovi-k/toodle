@@ -115,7 +115,7 @@ button, input, select, textarea {
   left: 4px;
   top: 50%;
   position: absolute;
-  transform: translatey(-50%);
+  transform: translate(-50%);
   width: 18px;
   height: 18px;
   display: block;
