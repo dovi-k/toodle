@@ -161,15 +161,15 @@ with useful information, points and benifits of to do lists. Then the rest of th
 
 
 #### Desktop Wireframes
-* [Dashboard](wireframes/desktop-dashboard.png)
+* [Dashboard](wireframes/desktop.pdf)
 
 
 #### Tablet Wireframes
-* [Dashboard](wireframes/tablet-dashboard.png)
+* [Dashboard](wireframes/tablet.pdf)
 
 
 #### Mobile Wireframes
-* [Dashboard](wireframes/mobile-dashboard.png)
+* [Dashboard](wireframes/mobile.pdf)
 
 
 
