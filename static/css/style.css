@@ -2,6 +2,8 @@
 /*Logo*/
     .logo { position: relative;
             width: 100px;
-            left: 64px;
+            left: 0;
             top: -15px;
             background-size: contain;}
+
+

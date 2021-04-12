@@ -3,6 +3,7 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,75 +12,76 @@
     <!-- Compiled and minified CSS from Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
-    
+
     <title>To Do Lists</title>
 
 </head>
+
 <body>
-<h3 class="center teal lighten-4">My To Do Lists 2</h3>
+    <h3 class="center teal lighten-4">My To Do Lists 2</h3>
 
-<a class="btn-floating btn-large cyan darken-4 pulse right"><i class="fas fa-plus"></i></a>
+    <a class="btn-floating btn-large cyan darken-4 pulse right"><i class="fas fa-plus"></i></a>
+    <div class="col s12 m6 z-depth-5">
+        <div class="todoList">
+        {% for list in lists %}
+            <div class="cover-img">
+                <div class="cover-inner">
+                    <h3>Vacation</h3>
+                </div>
+            </div>
+            <div class="content">
+                <form class="add">
+                    <input type="text" name="add" placeholder="Add item...">
+                    <div class="input-buttons">
+                        <a href="#0" class="add-todo">
+                            <i class="fas fa-plus add"></i>
+                        </a>
+                    </div>
+                </form>
+                <ul class="todos">
+                    <li>
+                        <input type="checkbox" id="todo_1">
+                        <label for="todo_1">
+                            <span class="check"></span>
+                            {{ list_item.lists }}
+                        </label>
+                        <i class="far fa-trash-alt delete"></i>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="todo_2">
+                        <label for="todo_2">
+                            <span class="check"></span>
+                            Find AirBnbB
+                        </label>
+                        <i class="far fa-trash-alt delete"></i>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="todo_3">
+                        <label for="todo_3">
+                            <span class="check"></span>
+                            Look up things to do
+                        </label>
+                        <i class="far fa-trash-alt delete"></i>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="todo_4">
+                        <label for="todo_4">
+                            <span class="check"></span>
+                            Passport
+                        </label>
+                        <i class="far fa-trash-alt delete"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div> 
 
-<div class="todoList">
-  <div class="cover-img">
-    <div class="cover-inner">
-      <h3>Vacation</h3>
-    </div>
-  </div>
-  <div class="content">
-    <form class="add">
-      <input type="text" name="add" placeholder="Add item...">
-      <div class="input-buttons">
-        <a href="#0" class="add-todo">
-          <i class="fas fa-plus add"></i>
-        </a>
-      </div>
-    </form>
-    <ul class="todos">
-      <li>
-        <input type="checkbox" id="todo_1">
-        <label for="todo_1">
-          <span class="check"></span>
-          Buy Flight Tickets
-        </label>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-      <li>
-        <input type="checkbox" id="todo_2">
-        <label for="todo_2">
-          <span class="check"></span>
-          Find AirBnbB
-        </label>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-      <li>
-        <input type="checkbox" id="todo_3">
-        <label for="todo_3">
-          <span class="check"></span>
-          Look up things to do
-        </label>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-      <li>
-        <input type="checkbox" id="todo_4">
-        <label for="todo_4">
-          <span class="check"></span>
-          Passport
-        </label>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-    </ul>
-  </div>
-</div>
+    {% endfor %}
 
+    <script src="{{ url_for('static', filename='js/to-do.js') }}"></script>
 
-{% for list in lists %}
-
-{% endfor %}
-
-<script src="{{ url_for('static', filename='js/to-do.js') }}"></script>
-    
 </body>
+
 </html>
 
 {% endblock %}

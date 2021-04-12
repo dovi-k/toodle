@@ -31,7 +31,7 @@ Toodle you personal to do list organiser is here at your service.
         * [Fonts](#fonts)
         * [Colors](#colors)
         * [Structure](#structure)
-* [Wireframes and Flowcharts](#wireframes-and-flowcharts)
+* [Wireframes](#wireframes-and-flowcharts)
     * [Wireframes](#wireframes)
     * [Database Structure](#database-structure)
 * [Features](#features)
@@ -185,13 +185,14 @@ _id      | ObjectId
 username | String
 password | String
 
-#### **List Names:**
+#### **List Categiories:**
 
 Key             | Value
 ----------------|-----------
 _id             | ObjectId
 user_id         | String
 list_name       | String
+list_image      | String
 
 #### **List Items:**
 
