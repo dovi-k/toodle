@@ -31,9 +31,11 @@
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">{{ list_name.list}}<i class="material-icons right">close</i></span>
-    <li>
-      {% for list_items in list_item %}
+    {% for list_items in list_item %}
+      <li>
+      {% list.list_item %}
      </li>
+     {% enfor %}
     </div>
   </div>
   </div>
