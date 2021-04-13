@@ -19,14 +19,14 @@
 
     <header>
         <!--Top navbar-->
-        <nav class="teal darken-2 text-shadow">
+        <nav class="teal darken-4 text-shadow">
             <div class="nav-wrapper">
                 <a href="{{ url_for('index') }}" class="brand-logo">
                     <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Toodle website logo"
                         class="logo"></a>
                 <a href="{{ url_for('index') }}" data-target="mobile-demo" class="sidenav-trigger"><i
                         class="fas fa-bars"></i></a>
-                <ul class="hide-on-med-and-down">
+                <ul class="right hide-on-med-and-down">
                     {% if session.user %}
                     <li><a href="#">My Lists</a></li>
                     <li><a href="{{ url_for('add_todo') }}">New List</a></li>
