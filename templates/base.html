@@ -21,17 +21,17 @@
         <!--Top navbar-->
         <nav class="teal darken-2 text-shadow">
             <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="brand-logo left">
+                <a href="{{ url_for('index') }}" class="brand-logo">
                     <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Toodle website logo"
                         class="logo"></a>
-                <a href="{{ url_for('index') }}" data-target="mobile-demo" class="sidenav-trigger right"><i
+                <a href="{{ url_for('index') }}" data-target="mobile-demo" class="sidenav-trigger"><i
                         class="fas fa-bars"></i></a>
                 <ul class="hide-on-med-and-down">
                     {% if session.user %}
                     <li><a href="#">My Lists</a></li>
                     <li><a href="{{ url_for('add_todo') }}">New List</a></li>
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt right"></i>Log out</a></li>
+                    <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
                     {% else %}
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('signup') }}">Sign Up</a></li>

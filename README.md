@@ -185,23 +185,23 @@ _id      | ObjectId
 username | String
 password | String
 
-#### **List Categiories:**
+#### List Categiories
 
 Key             | Value
 ----------------|-----------
 _id             | ObjectId
 user_id         | String
-list_name       | String
-list_image      | String
+name            | String
 
-#### **List Items:**
+
+#### List Items
 
 Key             | Value
 ----------------|-----------
 _id             | ObjectId
 user_id         | String
-list_id         | String
-list_item       | String
+category_id     | String
+name            | String
 
 
 

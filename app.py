@@ -21,7 +21,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/index")
 def index():
     return render_template("index.html")
 
@@ -29,10 +28,12 @@ def index():
 @app.route("/todo")
 def todo():
     lists = list(mongo.db.lists.find())
-    return render_template("to-do-list.html", lists=lists)
+
+    print(lists)
+    return render_template("to-do-list.html",lists=lists )
 
 
-@app.route("/add_todo")
+@app.route("/add/todo")
 def add_todo():
     return render_template("add_todo.html")
 
@@ -99,7 +100,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-@app.route("/all_lists")
+@app.route("/lists")
 def all_lists():
     lists = list(mongo.db.lists.find())
     return render_template("all_lists.html", lists=lists)
