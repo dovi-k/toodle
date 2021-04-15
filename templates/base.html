@@ -28,7 +28,7 @@
                         class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
-                    <li><a href="#">My Lists</a></li>
+                    <li><a href="{{ url_for('get_categories') }}">My Lists</a></li>
                     <li><a href="{{ url_for('add_category') }}">New List</a></li>
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
