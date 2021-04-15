@@ -17,25 +17,32 @@
 </head>
 <body>
 <h3 class="center teal lighten-4">My Categories </h3>
-  
-<ul class="collection">
-    <li class="collection-item avatar">
-      <i class="fas fa-list-ol circle green"></i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons"></i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="fas fa-list-ol circle green"></i>
-        <p><strong> Work </strong></p>
-      <a href="#!" class="col s3"><i class="fas fa-arrow-circle-right"></i></a>
-      <a href="#!" class="col s3"><i class="fas fa-pen"></i></a>
-      <a href="#!" class="col s3"><i class="fas fa-arrow-circle-right"></i></a>
-    </li>
 
-  </ul>
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_category') }}" class="btn-floating btn-large tooltipped pulse" data-position="bottom" data-tooltip="Add Category"><i class="fas fa-plus-square"></i>
+                 <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for category in categories %}
+            <div class="col s12 m3">
+                <div class="card teal lighten-4 text-shadow center-align">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ category.category_name }}</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn green accent-4">Edit</a>
+                        <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn light-blue lighten-1">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
             
 
 

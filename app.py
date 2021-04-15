@@ -24,18 +24,19 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("name", 1))
+    return render_template("categories.html", categories=categories)
 
-@app.route("/todo")
-def todo():
-    lists = list(mongo.db.lists.find())
-
-    print(lists)
-    return render_template("to-do-list.html",lists=lists )
-
-
-@app.route("/add/todo")
-def add_todo():
-    return render_template("add_todo.html")
+@app.route("/add-category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {"category_name": request.form.get("name")}
+        mongo.db.categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("get_categories"))
+    return render_template("add_category.html")
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -99,11 +100,12 @@ def profile(username):
 
     return redirect(url_for("login"))
 
-
+ 
+# Finding user categories
 @app.route("/lists")
 def all_lists():
-    lists = list(mongo.db.lists.find())
-    return render_template("all_lists.html", lists=lists)
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("all_lists.html", categories=categories)
 
 
 @app.route("/logout")

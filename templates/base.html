@@ -29,7 +29,7 @@
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
                     <li><a href="#">My Lists</a></li>
-                    <li><a href="{{ url_for('add_todo') }}">New List</a></li>
+                    <li><a href="{{ url_for('add_category') }}">New List</a></li>
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
                     {% else %}
@@ -44,7 +44,7 @@
         <ul class="sidenav text-shadow" id="mobile-demo">
             {% if session.user %}
             <li><a href="#">My Lists</a></li>
-            <li><a href="{{ url_for('add_todo') }}">New List</a></li>
+            <li><a href="{{ url_for('add_category') }}">New List</a></li>
             <li><a href="{{ url_for('profile', username=session['user']) }}">profile</a></li>
             <li><a href="collapsible.html">Log Out</a></li>
             {% else %}
