@@ -58,6 +58,23 @@ def delete_category(category_id):
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
 
+@app.route("/get_items/<category_id>")
+def get_items(category_id):
+    items = list(mongo.db.items.find({"category_id":category_id}))
+    return render_template("items.html", items=items)
+
+@app.route("/add_item/<category_id>", methods=["GET", "POST"])
+def add_item(category_id):
+    if request.method == "POST":
+        item = {
+            "category_id": request.form.get(category_id),
+            "item": request.form.get("item_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.items.insert_one(item)
+        flash("Successfully Added")
+        return redirect(url_for("get_items/<category_id>"))
+    return render_template("add_item.html")
 
 
 
