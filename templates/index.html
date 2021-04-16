@@ -22,8 +22,7 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="{{  url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" alt="my-to-do website logo" width="100" height="70"></a>
-      <a class="btn btn-primary" href="{{  url_for('all_lists') }}">To do list</a>
-      <a class="btn btn-primary" href="{{ url_for('signup') }}">Sign In</a>
+      <a class="btn btn-primary" href="{{ url_for('login') }}">Log In</a>
     </div>
   </nav>
 
@@ -39,8 +38,7 @@
           <form>
             <div class="form-row">
               <div class="col-12 col-md-3">
-                  <a href="{{ url_for('signup') }}"></a>
-                <button type="submit" href="{{ url_for('signup') }}" class="btn btn-block btn-lg btn-primary btn-position">Sign up!</button>
+                  <a class="btn btn-block btn-lg btn-primary btn-position" href="{{ url_for('signup')}}"> Sign Up!</a>
               </div>
             </div>
           </form>

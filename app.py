@@ -24,19 +24,22 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
+
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("name"))
     return render_template("categories.html", categories=categories)
 
+
 @app.route("/add-category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
-        category_name = {"name": request.form.get("name"),}
+        category_name = {"name": request.form.get("name")}
         mongo.db.categories.insert_one(category_name)
         flash("New Category Added")
         return redirect(url_for("get_categories"))
     return render_template("add_category.html")
+
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
@@ -58,10 +61,12 @@ def delete_category(category_id):
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
 
+
 @app.route("/get_items/<category_id>")
 def get_items(category_id):
-    items = list(mongo.db.items.find({"category_id":category_id}))
-    return render_template("items.html", items=items,category_id=category_id)
+    items = list(mongo.db.items.find({"category_id": category_id}))
+    return render_template("items.html", items=items, category_id=category_id)
+
 
 @app.route("/add_item/<category_id>", methods=["GET", "POST"])
 def add_item(category_id):
@@ -73,10 +78,8 @@ def add_item(category_id):
         }
         mongo.db.items.insert_one(item)
         flash("Successfully Added")
-        return redirect(url_for("get_items",category_id=category_id))
+        return redirect(url_for("get_items", category_id=category_id))
     return render_template("add_item.html")
-
-
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -103,6 +106,7 @@ def signup():
     return render_template("signup.html")
 
 
+# log in function
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -137,15 +141,7 @@ def profile(username):
         {"username": session["user"]})["username"]
     if session["user"]:
         return render_template("profile.html", username=username)
-
     return redirect(url_for("login"))
-
- 
-# Finding user categories
-@app.route("/lists")
-def all_lists():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("all_lists.html", categories=categories)
 
 
 @app.route("/logout")

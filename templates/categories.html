@@ -5,8 +5,9 @@
     <h3 class="light-blue-text text-darken-4 center-align">Manage Categories</h3>   
     <div class="row">
         <div class="col s12 center-align">
-            <a href="{{ url_for('add_category') }}" class="btn-large light-blue darken-2 text-shadow">
-                Add Category <i class="fas fa-plus-square right"></i>
+                <a href="{{ url_for('add_category') }}" class="btn-floating btn-large tooltipped pulse right" 
+                data-position="bottom" data-tooltip="Add Category"><i class="fas fa-plus-square"></i>
+                 <i class="fas fa-plus-square"></i>
             </a>
         </div>
     </div>
@@ -14,7 +15,7 @@
     <div class="row">
         {% for category in categories %}
             <div class="col s12 m3">
-                <div class="card light-blue darken-4 text-shadow center-align">
+                <div class="card teal darken-4 text-shadow center-align">
                     <div class="card-content white-text">
                         <a href="{{ url_for('get_items', category_id=category._id) }}" class="card-title">{{ category.name }}</a>
                     </div>
