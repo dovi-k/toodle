@@ -36,7 +36,9 @@ def get_categories():
 @app.route("/add-category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
-        category_name = {"name": request.form.get("name")}
+        category_name = {"name": request.form.get("name"),
+                         "created_by": session["user"]
+                         }
         mongo.db.categories.insert_one(category_name)
         flash("New Category Added")
         return redirect(url_for("get_categories"))
@@ -73,6 +75,14 @@ def get_items(category_id):
     return render_template("items.html", items=items, category_id=category_id)
 
 
+# getting to do list items for each category
+@app.route("/get_item/<category_id>")
+def get_item(category_id):
+    items = list(mongo.db.items.find({"category_id": category_id}))
+    return render_template("items_copy.html",
+                           items=items, category_id=category_id)
+
+
 # adding item to the list category
 @app.route("/add_item/<category_id>", methods=["GET", "POST"])
 def add_item(category_id):
@@ -88,12 +98,29 @@ def add_item(category_id):
     return render_template("add_item.html")
 
 
+# editing list item
+@app.route("/edit_item", methods=["GET", "POST"])
+def edit_task(item_id):
+    if request.method == "POST":
+        submit = {
+            "category_id": request.form.get("category_id"),
+            "item_name": request.form.get("task_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.item.update({"_id": ObjectId(item_id)}, submit)
+        flash("Successfully Updated")
+
+    item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
+    categories = mongo.db.categories.find().sort("name", 1)
+    return render_template("get_item.html", item=item, categories=categories)
+
+
 # deleting item from list
-@app.route("/delete_item/<item_id>")
-def delete_task(item_id):
-    mongo.db.lists.remove({"_id": ObjectId(item_id)})
+@app.route("/delete_item")
+def delete_item(item_id):
+    mongo.db.items.remove({"_id": ObjectId(item_id)})
     flash("Successfully Deleted")
-    return redirect(url_for("get_tasks"))
+    return redirect(url_for("get_item"))
 
 
 # sign up function
@@ -119,6 +146,17 @@ def signup():
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("signup.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
 
 
 # log in function
@@ -147,18 +185,6 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
-
-
-# displaying user's profile
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    # putting user into the session cookie
-    if session["user"]:
-        return render_template("profile.html", username=username)
-    return redirect(url_for("login"))
 
 
 # log out functuon

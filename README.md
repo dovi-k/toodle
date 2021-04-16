@@ -1,6 +1,6 @@
 # **TOODLE**
 
-![Mock up](wireframes/#)
+![Mock up](wireframes/responsive.png)
 
 
 ## **Goal for this project**
@@ -13,6 +13,11 @@ Whether you want to break your big overwhelming tasks into smaller more managibl
 you College, Home, Personal activities and have your tasks in organised different lists categories that you set
 Toodle you personal to do list organiser is here at your service.
  
+Unfortunetly, at this stage Toodle is not a finished project, more like project in which is still very much process and needs 
+much more work and tidying up on many levels.
+Due to time constrictions I kept leaning more and more to Task Mangager projetc which resulted not fully
+ completing the idea and making comprosises on the original idea
+for which it was aimed for. Allowing user to freely organise their lists, priorities add deadlines and reminders.
 
 
 --- 
@@ -185,7 +190,7 @@ _id      | ObjectId
 username | String
 password | String
 
-#### List Categiories
+#### Categories
 
 Key             | Value
 ----------------|-----------
@@ -194,7 +199,7 @@ user_id         | String
 name            | String
 
 
-#### List Items
+#### Items
 
 Key             | Value
 ----------------|-----------
@@ -277,6 +282,16 @@ or category
 [Back to Top](#table-of-contents)
 
 <a></a>
+
+## **Testing**
+
+### Registration
+
+#### User story: As a user, I would like to be able to register for the website so I can have my personal environment
+
+* Plan
+I want to create a simple sign up page, where a user can create their selected username and password.
+
 
 ## **Deployment**
 
