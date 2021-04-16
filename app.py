@@ -25,12 +25,14 @@ def index():
     return render_template("index.html")
 
 
+# getting all categories
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("name"))
     return render_template("categories.html", categories=categories)
 
 
+# add category function
 @app.route("/add-category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -41,6 +43,7 @@ def add_category():
     return render_template("add_category.html")
 
 
+# edit category function
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -55,6 +58,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# deleting category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
@@ -62,12 +66,14 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
+# getting to do list items for each category
 @app.route("/get_items/<category_id>")
 def get_items(category_id):
     items = list(mongo.db.items.find({"category_id": category_id}))
     return render_template("items.html", items=items, category_id=category_id)
 
 
+# adding item to the list category
 @app.route("/add_item/<category_id>", methods=["GET", "POST"])
 def add_item(category_id):
     if request.method == "POST":
@@ -82,6 +88,15 @@ def add_item(category_id):
     return render_template("add_item.html")
 
 
+# deleting item from list
+@app.route("/delete_item/<item_id>")
+def delete_task(item_id):
+    mongo.db.lists.remove({"_id": ObjectId(item_id)})
+    flash("Successfully Deleted")
+    return redirect(url_for("get_tasks"))
+
+
+# sign up function
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -117,10 +132,10 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for("profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -134,19 +149,22 @@ def login():
     return render_template("login.html")
 
 
+# displaying user's profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    # putting user into the session cookie
     if session["user"]:
         return render_template("profile.html", username=username)
     return redirect(url_for("login"))
 
 
+# log out functuon
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
+    # removing user from session
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
