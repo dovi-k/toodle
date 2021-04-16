@@ -291,6 +291,10 @@ or category
 
 * Plan
 I want to create a simple sign up page, where a user can create their selected username and password.
+* Implementation I have manged to create Sign up page where users can create their account
+
+Testing user strories without having user session cookie though the website it's tricky because most of the stories refer to
+personal envitroment.
 
 
 ## **Deployment**
@@ -413,6 +417,22 @@ customised colours, icons and text
 followed the sign up, sign up functions and made them work for my page
 * ReadMe file Stucture was based from Anouk Smet project [Dogs Health Tracker](https://github.com/AnoukSmet/Dog-Health-Tracker/blob/master/README.md#testing)
 * Images for the website taken from [Pexels](https://www.pexels.com/search/to%20do%20list/)
+
+## Known Bugs:
+
+Since the site is not fully finished and there are so many things yet to be fixed, that unfortunately due to time restriction
+I wasn't able to, but I will tru to name few probably won't able to name all.
+ * List Categories are available to view to evry user instead of esers would be able to access their own enviroments,
+ which then takes away the point of signing up for the website at all
+ * images in the index.html page does not align in nicely and in proportions when using table and different devices
+ * You cannot edit or delete created tasks, due to constant error on implementing this feature I had to remove last minute
+ * profile page displays empty
+ * naming is off an can be confusing at times
+ * to diplay tasks I used acordion which does not make sense, I used for develomnet purposes. When you click on the acordion
+ it displays an ideawhich is another glitch
+ * when adding the task I wasn't able to add the category id to the items, the value pushed was null
+ * as I mentioned before there are more I could to point out just the most obvious ones
+
 
 
 ## **Credits**
